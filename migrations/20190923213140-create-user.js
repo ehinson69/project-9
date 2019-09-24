@@ -10,35 +10,23 @@ module.exports = {
       },
       firstName: {
         type: Sequelize.STRING,
-        defaultValue: false,
-        allowNull: false
       },
       lastName: {
         type: Sequelize.STRING,
-        defaultValue: false,
-        allowNull: false
       },
       emailAddress: {
         type: Sequelize.STRING,
-        defaultValue: false,
-        allowNull: false
       },
       password: {
         type: Sequelize.STRING,
-        defaultValue: false,
-        allowNull: false
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: false,
-        allowNull: false
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: false,
-        allowNull: false
       }
     });
   },

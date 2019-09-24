@@ -19,12 +19,19 @@ app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("./api/course", courseRouter);
 
+// setup a friendly greeting for the root route
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to the REST API project!',
+  });
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404, "Route Not Found"));
 });
 
-// error handler
+// local error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
