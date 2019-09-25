@@ -6,7 +6,7 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const courseRouter = require("./routes/course")
+const coursesRouter = require("./routes/courses");
 
 const app = express();
 
@@ -16,13 +16,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
-app.use("/api/users", usersRouter);
-app.use("./api/course", courseRouter);
+app.use("/api", usersRouter);
+app.use("/api", coursesRouter);
 
 // setup a friendly greeting for the root route
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
-    message: 'Welcome to the REST API project!',
+    message: "Welcome to the REST API project!"
   });
 });
 

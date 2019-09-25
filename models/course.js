@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Course = sequelize.define('Course', {
+  const Course = sequelize.define("Course", {
     userId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Users',
-        key: 'id'
+        model: "Users",
+        key: "id"
       }
     },
     title: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     estimatedTime: DataTypes.STRING,
     materialsNeeded: DataTypes.STRING
-  }, {});
+  });
   Course.associate = function(models) {
     // associations can be defined here
     Course.belongsTo(models.User);
